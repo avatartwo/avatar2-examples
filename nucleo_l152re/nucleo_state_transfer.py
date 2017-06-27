@@ -29,9 +29,9 @@ def main():
                              gdb_executable="arm-none-eabi-gdb", gdb_port=1236)
 
     # Define the various memory ranges and store references to them
-    rom  = avatar.add_memory_range(0x08000000, 0x1000000, 'rom', file=firmware)
-    ram  = avatar.add_memory_range(0x20000000, 0x14000, 'ram')
-    mmio = avatar.add_memory_range(0x40000000, 0x1000000, 'peripherals',
+    rom  = avatar.add_memory_range(0x08000000, 0x1000000, file=firmware)
+    ram  = avatar.add_memory_range(0x20000000, 0x14000)
+    mmio = avatar.add_memory_range(0x40000000, 0x1000000,
                                    forwarded=True, forwarded_to=nucleo)
 
     # Initialize the targets

@@ -64,26 +64,28 @@ def main():
 
     # Definition of memory ranges, corresponding to the definitions of the
     # avatar1 example, including forwarded, emulated and file-backed ranges
-    avatar.add_memory_range(0x00000000, 0x001000, 'interrupts')
+    avatar.add_memory_range(0x00000000, 0x001000, name='interrupts')
 
-    avatar.add_memory_range(0x00001000, 0xfdc000, 'before_code',
+    avatar.add_memory_range(0x00001000, 0xfdc000, name='before_code',
                             forwarded=True, forwarded_to=gdb)
-    avatar.add_memory_range(0x00fdd000, 0x01000, 'init_mem')
-    avatar.add_memory_range(0x00fde000, 0x22000, 'heap')
+    avatar.add_memory_range(0x00fdd000, 0x01000, name='init_mem')
+    avatar.add_memory_range(0x00fde000, 0x22000, name='heap')
 
-    avatar.add_memory_range(0x01000000, 0x019000, 'text_data_bss',
+    avatar.add_memory_range(0x01000000, 0x019000, name='text_data_bss',
                             file='%s/u-boot.bin' % os.getcwd())
 
-    avatar.add_memory_range(0x01019000, 0x101f1000-0x01019000, 'after_code',
+    avatar.add_memory_range(0x01019000, 0x101f1000-0x01019000, 
+                            name='after_code', 
                             forwarded=True, forwarded_to=gdb)
 
-    avatar.add_memory_range(0x101f1000, 0x1000, 'serial',
+    avatar.add_memory_range(0x101f1000, 0x1000, name='serial',
                             qemu_name='pl011',
                             qemu_properties={'type': 'serial',
                                              'name': 'chardev',
                                              'value': 0})
 
-    avatar.add_memory_range(0x101f2000, 0x100000000-0x101f2000, 'after_serial',
+    avatar.add_memory_range(0x101f2000, 0x100000000-0x101f2000, 
+                            name='after_serial',
                             forwarded=True, forwarded_to=gdb)
 
     # Initiliaze the targets
