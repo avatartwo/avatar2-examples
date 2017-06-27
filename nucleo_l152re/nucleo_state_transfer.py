@@ -46,7 +46,7 @@ def main():
         nucleo.wait()
 
         # 2) Transfer the state from the physical device to the emulator
-        avatar.transfer_state(nucleo, qemu, synched_ranges=[ram])
+        avatar.transfer_state(nucleo, qemu, synced_ranges=[ram])
 
         print("State transfer finished, emulator $pc is: 0x%x" % qemu.regs.pc)
     else:
@@ -61,7 +61,7 @@ def main():
         # 3) Configure transitions
         #    Here, only one transition is defined. Note that 'stop=True' forces
         #    the orchestration to stop once the transition has occurred.
-        avatar.add_transition(0x8005104, nucleo, qemu, synched_ranges=[ram],
+        avatar.add_transition(0x8005104, nucleo, qemu, synced_ranges=[ram],
                               stop=True)
 
         # 4) Start the orchestration!
