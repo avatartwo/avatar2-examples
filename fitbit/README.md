@@ -38,17 +38,24 @@ to qemu which allow us to do further analysis.
 
 					|  SWD pins |  ST-LINK-V2-1 pins |  Fitbit test points |
 					|-----------|--------------------|---------------------|
+<<<<<<< HEAD
 					|  SWDCLK   |  Pin 2			 |         TP8         |
 					|  SWDIO    |  Pin 4 			 |		   TP9  	   |
 					|  GND      |  Pin 3			 |         GND 	       |
 					|  NRST     |  Pin 5  			 |         TP10	       |
+=======
+					|  SWDCLK   |  Pin 2	         |	   TP8	       |
+					|  SWDIO    |  Pin 4 	         |         TP9         |
+					|  GND      |  Pin 3	         |         GND 	       |
+					|  NRST     |  Pin 5  	         |         TP10	       |
+>>>>>>> e4807280ed930260b91c67828724d5531b05019c
 
 
 
 5. The figure below shows the final setup
 
 <figure>
-	<p align="center">
+    <p align="center">
     <img src="./final_setup.png" alt="Final setup" id="fig_id" title="Final setup" >
     <figcaption>Final setup</figcaption>
     </p>
