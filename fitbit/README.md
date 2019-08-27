@@ -38,7 +38,7 @@ to qemu which allow us to do further analysis.
 
 					|  SWD pins |  ST-LINK-V2-1 pins |  Fitbit test points |
 					|-----------|--------------------|---------------------|
-					|  SWDCLK   |  Pin 2			 |		   TP8		   |
+					|  SWDCLK   |  Pin 2			 |         TP8         |
 					|  SWDIO    |  Pin 4 			 |		   TP9  	   |
 					|  GND      |  Pin 3			 |         GND 	       |
 					|  NRST     |  Pin 5  			 |         TP10	       |
