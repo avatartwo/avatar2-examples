@@ -30,10 +30,11 @@ to qemu which allow us to do further analysis.
 2. the fitbit could be connected to a Debug unit through an Serial Wire Debug (SWD) interface. On the pcb four test points that could be used for debugging as the figure below shows:
 
 <figure>
-<p align="center"> 
-<img src="./fitbit_test_points.png" title="Ftibit test points"/>
-<figcaption>Ftibit test points</figcaption>
-</p>
+	<p align="center"> 
+		<img src="./fitbit_test_points.png" alt="Ftibit test points"/>
+		<br>
+    	<em>Fig. 2: Ftibit test points</em>
+	</p>
 </figure>
 
 3. As a debug adapter we used STLINK-V2-1 of a nucleo board that support SWD
@@ -52,8 +53,9 @@ to qemu which allow us to do further analysis.
 
 <figure>
     <p align="center">
-    <img src="./final_setup.png" alt="Final setup" id="fig_id" title="Final setup" >
-    <figcaption>Final setup</figcaption>
+    	<img src="./final_setup.png" alt="Final setup">
+		<br>
+    	<em>Fig. 3: Final setup</em>
     </p>
 </figure>
 
@@ -83,10 +85,11 @@ hex(fitbit.read_memory(0x200049f0,8,1,False))
 ```
 
 <figure>
-<p align="center"> 
-<img src="./mac_address_extraction.png" title="Reading the content of R1"/>
-<figcaption>Reading the content of R1</figcaption>
-</p>
+	<p align="center"> 
+		<img src="./mac_address_extraction.png" alt="Reading the content of R1"/>
+		<br>
+    	<em>Fig. 4: Reading the content of R1</em>	
+	</p>
 </figure>
 
 
@@ -97,5 +100,5 @@ As we see the fitbit MAC address cc:d1:fa:82:9b:03
 * Fitbit Hacking - RECON presentation:
 https://recon.cx/2018/montreal/schedule/system/event_attachments/attachments/000/000/045/original/RECON-MTL-2018-Fitbit_Firmware_Hacking.pdf
 
-* the source of the fitbit patched firmware:
+* The source of the fitbit patched firmware:
 https://github.com/seemoo-lab/fitness-firmware/tree/master/patches/flex1/7_64
