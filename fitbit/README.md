@@ -37,21 +37,13 @@ to qemu which allow us to do further analysis.
 
 3. As a debug adapter we used STLINK-V2-1 of a nucleo board that support SWD
 4. The Pairing between ST-LINK-V2 and fitbit
-
-					|  SWD pins |  ST-LINK-V2-1 pins |  Fitbit test points |
-					|:---------:|:------------------:|:-------------------:|
-					|  SWDCLK   |  Pin 2			 |         TP8         |
-					|  SWDIO    |  Pin 4 			 |		   TP9  	   |
-					|  GND      |  Pin 3			 |         GND 	       |
-					|  NRST     |  Pin 5  			 |         TP10	       |
-
-
-|  SWD pins |   ST-LINK-V2-1 pins | Fitbit test points  |
-|:-:|:-:|:-:|
-|  SWDCLK |  Pin 2 |   TP8  |
-| SWDIO  |  Pin 4 |  TP9 |
-|  GND | Pin 3  |  GND |
-|  NRST |  Pin 5 | TP10  |
+				
+								|  SWD pins |   ST-LINK-V2-1 pins | Fitbit test points  |
+								|:-:|:-:|:-:|
+								|  SWDCLK |  Pin 2 |   TP8  |
+								| SWDIO  |  Pin 4 |  TP9 |
+								|  GND | Pin 3  |  GND |
+								|  NRST |  Pin 5 | TP10  |
 
 
 5. The figure below shows the final setup
@@ -59,7 +51,6 @@ to qemu which allow us to do further analysis.
 <figure>
     <p align="center">
     <img src="./final_setup.png" alt="Final setup" id="fig_id" title="Final setup" >
-    <figcaption>Final setup</figcaption>
     </p>
 </figure>
 
