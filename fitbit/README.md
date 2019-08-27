@@ -18,13 +18,18 @@ to qemu which allow us to do further analysis.
 
 1. To reach the PCB, the plastic part that covers the fitbit needs to be melted.At the end, the PCB looks like the figure below:
 
-Fitbit's PCB:
-![Fitbit's PCB](./fitbit_pcb.png)
+
+
+<p align="center"> 
+<img src="./fitbit_pcb.png" title ="Fitbit's PCB">
+</p>
 
 2. the fitbit could be connected to a Debug unit through an Serial Wire Debug (SWD) interface. On the pcb four test points that could be used for debugging as the figure below shows:
 
-Ftibit test points:
-![Ftibit test points](./fitbit_test_points.png)
+
+<p align="center"> 
+<img src="./fitbit_test_points.png" title ="Ftibit test points">
+</p>
 
 3. As a debug adapter we used STLINK-V2-1 of a nucleo board that support SWD
 4. The Pairing between ST-LINK-V2 and fitbit
@@ -38,9 +43,9 @@ Ftibit test points:
 
 5. The figure below shows the final setup
 
-Final setup:
-![Final setup](./final_setup.png)
-
+<p align="center"> 
+<img src="./final_setup.png" title ="Final setup">
+</p>
 
 ### Demo
 
