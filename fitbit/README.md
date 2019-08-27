@@ -21,34 +21,36 @@ to qemu which allow us to do further analysis.
 
 
 <p align="center"> 
-<img src="./fitbit_pcb.png" alt="Fitbit's PCB" title="Fitbit's PCB"/>
+<img src="./fitbit_pcb.png" title="Fitbit's PCB"/>
 </p>
 
 2. the fitbit could be connected to a Debug unit through an Serial Wire Debug (SWD) interface. On the pcb four test points that could be used for debugging as the figure below shows:
 
 
 <p align="center"> 
-<img src="./fitbit_test_points.png" alit="Ftibit test points" title="Ftibit test points"/>
+<img src="./fitbit_test_points.png" title="Ftibit test points"/>
 </p>
 
 3. As a debug adapter we used STLINK-V2-1 of a nucleo board that support SWD
 4. The Pairing between ST-LINK-V2 and fitbit
 
-<center>
-|  SWD pins |  ST-LINK-V2-1 pins |  Fitbit test points |
-|-----------|--------------------|---------------------|
-|  SWDCLK   |  Pin 2  			 | 			TP8 	   |
-|  SWDIO    |  Pin 4 			 | 	        TP9  	   |
-|  GND      |  Pin 3			 |          GND 	   |
-|  NRST     |  Pin 5  			 |          TP10 	   |
 
-</center>
+
+					|  SWD pins |  ST-LINK-V2-1 pins |  Fitbit test points |
+					|-----------|--------------------|---------------------|
+					|  SWDCLK   |  Pin 2  			 | 			TP8 	   |
+					|  SWDIO    |  Pin 4 			 | 	        TP9  	   |
+					|  GND      |  Pin 3			 |          GND 	   |
+					|  NRST     |  Pin 5  			 |          TP10 	   |
+
+
 
 5. The figure below shows the final setup
 
-<p align="center"> 
-<img src="./final_setup.png" alt="Final setup" title="Final setup"/>
-</p>
+<figure>
+    <img src="./final_setup.png" alt="Final setup" id="fig_id" title="Final setup" align="center">
+    <figcaption>Final setup</figcaption>
+</figure>
 
 ### Demo
 
@@ -76,7 +78,7 @@ hex(fitbit.read_memory(0x200049f0,8,1,False))
 ```
 
 <p align="center"> 
-<img src="./mac_address_extraction.png" alt="Reading the content of R1" title="Reading the content of R1"/>
+<img src="./mac_address_extraction.png" title="Reading the content of R1"/>
 </p>
 
 
