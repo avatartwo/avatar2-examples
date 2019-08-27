@@ -39,13 +39,13 @@ to qemu which allow us to do further analysis.
 4. The Pairing between ST-LINK-V2 and fitbit
 
 					|  SWD pins |  ST-LINK-V2-1 pins |  Fitbit test points |
-					|:----------|:------------------:|--------------------:|
+					|:---------:|:------------------:|:-------------------:|
 					|  SWDCLK   |  Pin 2			 |         TP8         |
 					|  SWDIO    |  Pin 4 			 |		   TP9  	   |
 					|  GND      |  Pin 3			 |         GND 	       |
 					|  NRST     |  Pin 5  			 |         TP10	       |
 
-<center>
+
 |  SWD pins |   ST-LINK-V2-1 pins | Fitbit test points  |
 |:-:|:-:|:-:|
 |  SWDCLK |  Pin 2 |   TP8  |
@@ -53,7 +53,6 @@ to qemu which allow us to do further analysis.
 |  GND | Pin 3  |  GND |
 |  NRST |  Pin 5 | TP10  |
 
-</center>
 
 5. The figure below shows the final setup
 
