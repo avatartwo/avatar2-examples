@@ -1,9 +1,13 @@
- """
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
 ########################
-This work is done in context of semestre project at EURECOM
+This work is done in context of a semester project at EURECOM 
+in the digital security department.
 #########################
 author: Bechir Bouali
-contact: bechir.bouali@eurecom.fr
+e-mail: bechir.bouali@eurecom.fr
 #########################
 """
 

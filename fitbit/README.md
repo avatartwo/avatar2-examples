@@ -14,6 +14,34 @@ to qemu which allow us to do further analysis.
 - `patched_firmware.bin` - binary version of the firmware used for this example, which is a patched 
 						   version of fitbit firmware that implement a GDB backdoor.
 
+### Device Setup:
+
+1. To reach the PCB, the plastic part that covers the fitbit needs to be melted.At the end, the PCB looks like the figure below:
+
+Fitbit's PCB:
+![Fitbit's PCB](./fitbit_pcb.png)
+
+2. the fitbit could be connected to a Debug unit through an Serial Wire Debug (SWD) interface. On the pcb four test points that could be used for debugging as the figure below shows:
+
+Ftibit test points:
+![Ftibit test points](./fitbit_test_points.png)
+
+3. As a debug adapter we used STLINK-V2-1 of a nucleo board that support SWD
+4. The Pairing between ST-LINK-V2 and fitbit
+
+|  SWD pins |  ST-LINK-V2-1 pins |  Fitbit test points |
+|-----------|--------------------|---------------------|
+|  SWDCLK   |  Pin 2  			 | 			TP8 	   |
+|  SWDIO    |  Pin 4 			 | 	        TP9  	   |
+|  GND      |  Pin 3			 |          GND 	   |
+|  NRST     |  Pin 5  			 |          TP10 	   |
+
+5. The figure below shows the final setup
+
+Final setup:
+![Final setup](./final_setup.png)
+
+
 ### Demo
 
 1. Using avatar script we were able to reach the breakpoint at 0x0800EE62: get_bluetooth_id
@@ -39,7 +67,16 @@ hex(fitbit.regs.r1)
 hex(fitbit.read_memory(0x200049f0,8,1,False))
 ```
 
+Reading the content of R1:
 ![Reading the content of R1](./mac_address_extraction.png)
 
 
 As we see the fitbit MAC address cc:d1:fa:82:9b:03
+
+### Resources:
+
+* Fitbit Hacking - RECON presentation:
+https://recon.cx/2018/montreal/schedule/system/event_attachments/attachments/000/000/045/original/RECON-MTL-2018-Fitbit_Firmware_Hacking.pdf
+
+* the source of the fitbit patched firmware:
+https://github.com/seemoo-lab/fitness-firmware/tree/master/patches/flex1/7_64
