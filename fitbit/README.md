@@ -19,36 +19,31 @@ to qemu which allow us to do further analysis.
 1. To reach the PCB, the plastic part that covers the fitbit needs to be melted.At the end, the PCB looks like the figure below:
 
 
-
+<figure>
 <p align="center"> 
 <img src="./fitbit_pcb.png" title="Fitbit's PCB"/>
+<figcaption>Fitbit's PCB</figcaption>
 </p>
+</figure>
 
 2. the fitbit could be connected to a Debug unit through an Serial Wire Debug (SWD) interface. On the pcb four test points that could be used for debugging as the figure below shows:
 
-
+<figure>
 <p align="center"> 
 <img src="./fitbit_test_points.png" title="Ftibit test points"/>
+<figcaption>Ftibit test points</figcaption>
 </p>
+</figure>
 
 3. As a debug adapter we used STLINK-V2-1 of a nucleo board that support SWD
 4. The Pairing between ST-LINK-V2 and fitbit
 
 					|  SWD pins |  ST-LINK-V2-1 pins |  Fitbit test points |
 					|-----------|--------------------|---------------------|
-<<<<<<< HEAD
 					|  SWDCLK   |  Pin 2			 |         TP8         |
 					|  SWDIO    |  Pin 4 			 |		   TP9  	   |
 					|  GND      |  Pin 3			 |         GND 	       |
 					|  NRST     |  Pin 5  			 |         TP10	       |
-=======
-					|  SWDCLK   |  Pin 2	         |	   TP8	       |
-					|  SWDIO    |  Pin 4 	         |         TP9         |
-					|  GND      |  Pin 3	         |         GND 	       |
-					|  NRST     |  Pin 5  	         |         TP10	       |
->>>>>>> e4807280ed930260b91c67828724d5531b05019c
-
-
 
 5. The figure below shows the final setup
 
@@ -84,9 +79,12 @@ hex(fitbit.regs.r1)
 hex(fitbit.read_memory(0x200049f0,8,1,False))
 ```
 
+<figure>
 <p align="center"> 
 <img src="./mac_address_extraction.png" title="Reading the content of R1"/>
+<figcaption>Reading the content of R1</figcaption>
 </p>
+</figure>
 
 
 As we see the fitbit MAC address cc:d1:fa:82:9b:03
