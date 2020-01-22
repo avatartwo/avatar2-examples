@@ -26,12 +26,12 @@ class TargetLauncher(object):
 
 def main():
 
-    # Adjust me!
-    qemu_path = ("/home/avatar2/avatar2/targets/build/qemu/arm-softmmu/"
-                 "qemu-system-arm")
+    
+    # Creation of the avatar-object
+    avatar = Avatar(arch=ARM, output_directory='/tmp/myavatar')
 
     # Let's start the qemu-instance which is not controlled by avatar2
-    target_runner = TargetLauncher([qemu_path,
+    target_runner = TargetLauncher([avatar.arch.get_qemu_executable(),
                                     "-M",  "versatilepb",
                                     "-m", "20M",
                                     "-gdb", "tcp:127.0.0.1:1234",
@@ -43,21 +43,14 @@ def main():
                                     "telnet:127.0.0.1:2001,server,nowait"
                                     ])
 
-    # Creation of the avatar-object
-    avatar = Avatar(arch=ARM, output_directory='/tmp/myavatar')
 
     # Define a GDBTarget as first target - this will be used to connect to
     # the qemu-instance which is not controlled by avatar2
-    gdb = avatar.add_target(GDBTarget,
-                            gdb_executable="arm-none-eabi-gdb", gdb_port=1234)
+    gdb = avatar.add_target(GDBTarget, gdb_port=1234)
 
     # Define a QemuTarget as second target, which will be used to emulate the
     # first target.
-    qemu = avatar.add_target(QemuTarget,
-                             gdb_executable="arm-none-eabi-gdb",
-                             executable=qemu_path,
-                             gdb_port=1236,
-                             entry_address=0x1000000)
+    qemu = avatar.add_target(QemuTarget, gdb_port=1236, entry_address=0x1000000)
 
     # Redirect the serial connection of the qemu-target to a tcp-connection
     qemu.additional_args = ["-serial", "tcp::2002,server,nowait"]

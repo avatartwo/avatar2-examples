@@ -14,19 +14,13 @@ def main():
 
     openocd_config = abspath('./nucleo-l152re.cfg')
 
-    # Adjust me!
-    qemu_path = ("/home/nsr/avatar2/avatar/targets/build/qemu/arm-softmmu/"
-                 "qemu-system-arm")
-
     # Initiate the avatar-object
     avatar = Avatar(arch=ARM_CORTEX_M3, output_directory='/tmp/avatar')
 
     # Create the target-objects
-    nucleo = avatar.add_target(OpenOCDTarget, openocd_script=openocd_config,
-                               gdb_executable="arm-none-eabi-gdb")
+    nucleo = avatar.add_target(OpenOCDTarget, openocd_script=openocd_config)
 
-    qemu = avatar.add_target(QemuTarget, executable=qemu_path,
-                             gdb_executable="arm-none-eabi-gdb", gdb_port=1236)
+    qemu = avatar.add_target(QemuTarget, gdb_port=1236)
 
     # Define the various memory ranges and store references to them
     rom  = avatar.add_memory_range(0x08000000, 0x1000000, file=firmware)
