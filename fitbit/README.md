@@ -4,8 +4,8 @@ Perform dynamic analysis of the fitbit's firmware bluetooth functions.
 
 ### Overview
 
-In this example, we used avatar² to reach specific bluetooth routines and then transfer execution 
-to qemu which allow us to do further analysis.
+In this example, you can use avatar² to reach specific bluetooth routines and then transfer execution
+to qemu which it allows you to do further analysis.
 
 ### Contents
 
@@ -33,7 +33,7 @@ to qemu which allow us to do further analysis.
 	<p align="center"> 
 		<img src="./fitbit_test_points.png" alt="Ftibit test points"/>
 		<br>
-    	<em>Fig. 2: Ftibit test points</em>
+		<em>Fig. 2: Ftibit test points, adapted from Fitbit Hacking - RECON presentation [1] </em>
 	</p>
 </figure>
 
@@ -61,8 +61,8 @@ to qemu which allow us to do further analysis.
 
 ### Demo
 
-1. Using avatar script we were able to reach the breakpoint at 0x0800EE62: get_bluetooth_id
-when we use the mobile application and try to pair the fitbit with an Android device. But
+1. By using avatar script you will be able to reach the breakpoint at 0x0800EE62: get_bluetooth_id
+when you use the mobile application and try to pair the fitbit with an Android device. But
 before that, this address was reached twice in the initialization process .
 
 	● First & second hit: get_bluetooth_id was called by "0x80187d9" instruction inside the
@@ -71,9 +71,9 @@ before that, this address was reached twice in the initialization process .
 "send_bt_id_c0" call get_bluetooth_id and then send bluetooth_id to the app which
 will enable the pairing.
 
-2. After reaching the third breakpoint the state was transferred to Qemu to emulate the
-execution. So by using Ipython.embed(), we were able to continue testing other
-functionalities and reaching other breakpoints while using the emulator. In addition we were able to get the MAC address of the fitbit by debugging the bluetooth function that use a MAC address as a parameter. With the help of the
+2. After reaching the third breakpoint the state will be transferred to Qemu to emulate the
+execution. So by using Ipython.embed(), you will be able to continue testing other
+functionalities and reaching other breakpoints while using the emulator. In addition you will be able to get the MAC address of the fitbit by debugging the bluetooth function that uses a MAC address as a parameter. With the help of the
 assembly code, we found that each time the function get_bluetooth_id is called, it load in the register R1 the address of memory where the MAC address is stored.So to retrieve the MAC address we proceeded as follow:
 
 ```python
@@ -93,12 +93,12 @@ hex(fitbit.read_memory(0x200049f0,8,1,False))
 </figure>
 
 
-As we see the fitbit MAC address cc:d1:fa:82:9b:03
+As we see the MAC address for our fitbit device is cc:d1:fa:82:9b:03
 
 ### Resources:
 
-* Fitbit Hacking - RECON presentation:
+* [1] Fitbit Hacking - RECON presentation:
 https://recon.cx/2018/montreal/schedule/system/event_attachments/attachments/000/000/045/original/RECON-MTL-2018-Fitbit_Firmware_Hacking.pdf
 
-* The source of the fitbit patched firmware:
+* [2] The source of the fitbit patched firmware:
 https://github.com/seemoo-lab/fitness-firmware/tree/master/patches/flex1/7_64
