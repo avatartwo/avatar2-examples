@@ -10,7 +10,7 @@ Currently, the following three examples are available:
 - [nucleo_l152re](/nucleo_l152re/README.md) - "Transferring the state of a
   physical device into an emulator after board initialization."
 
-- [nrf51_ble](/wisec21_nrf_ble/README.md) - "Hands-on examples explained during
+- [nrf51_ble](/wisec21_nrf51_ble/README.md) - "Hands-on examples explained during
   the WiSec'21 tutorial on avatar2."
 
 ## Adding your own example
