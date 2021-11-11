@@ -2,7 +2,7 @@
 
 This example was developed as part of the tutorial on avatar2 presented at the
 ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec)
-2021. The full video of the tutorial is avaible as VOD at *TBD*.
+2021. The full video of the tutorial is avaible as [VOD on Youtube](https://www.youtube.com/watch?v=uyAPi663NP4&t=5707s).
 
 ### Purpose
 
