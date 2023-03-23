@@ -19,10 +19,10 @@ class PicoTimer(AvatarPeripheral):
         print(
             f">>> PicoTimer handling read request at 0x{offset:x} of size 0x{size:x} <<<")
         if offset == 0x24:  # TIMERAWH register
-            # elapsed micoseconds, upper 32 bits
+            # elapsed microseconds, upper 32 bits
             return (int((datetime.datetime.now() - self.init_time).total_seconds() * 1_000_000) & 0xffff_ffff_0000_0000) >> 32
         elif offset == 0x28:  # TIMERAWL register
-            # elapsed micoseconds, lower 32 bits
+            # elapsed microseconds, lower 32 bits
             return int((datetime.datetime.now() - self.init_time).total_seconds() * 1_000_000) & 0xffff_ffff
         else:
             return 0x00
@@ -78,7 +78,7 @@ def main():
     # We will need the apb system registers
     apb_peripherals_1 = avatar.add_memory_range(
         0x40000000, 0x00054000, name='APB', forwarded=True, forwarded_to=pico)
-    # The global timer is paused when the cores are halted, so we need to emualte it
+    # The global timer is paused when the cores are halted, so we need to emulate it
     apb_timer: MemoryRange = avatar.add_memory_range(
         0x40054000, 0x44, emulate=PicoTimer)
     # Rest of the forwarded apb peripherals
