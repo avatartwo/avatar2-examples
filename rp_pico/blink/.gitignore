@@ -1,0 +1,5 @@
+# Ignore build output
+build/
+
+# Ignore IDE files
+.idea/

@@ -27,3 +27,4 @@ This example shows important concepts of the avatar² framework:
 - `blink.bin` - Dump of the flash of the pico for quicker state transfer
 - `blink.elf` - Compiled firmware (with debug symbols) for flashing and debugging
 - `pico_bootrom.bin` - Dumped image of the Picos bootrom (v2.0)
+- `blink/` - Files to compile the  `blink.elf` file
