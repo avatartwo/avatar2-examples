@@ -13,6 +13,8 @@ Currently, the following three examples are available:
 - [nrf51_ble](/wisec21_nrf51_ble/README.md) - "Hands-on examples explained during
   the WiSec'21 tutorial on avatar2."
 
+- [rp_pico](/rp_pico/README.md) - "Rehosting the Raspberry Pi Pico blink example."
+
 ## Adding your own example
 You haved used avatar² and want to showcase your script as example to guide
 other avatar² users in the future? You are more than welcome to do so!
