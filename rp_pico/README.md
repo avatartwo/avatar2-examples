@@ -29,7 +29,7 @@ This example shows important concepts of the avatar² framework:
 - Two [Raspberry Pi Picos](https://www.raspberrypi.com/products/raspberry-pi-pico/)
   , one flashed with the provided blink.elf, the other one setup as a picoprobe debugger for the first one
 - [Avatar²-core](https://github.com/avatartwo/avatar2) (at least March 2023)
-- [OpenOCD](http://openocd.org/) (at least Feb 2023)
+- [OpenOCD](http://openocd.org/) (Requires at least OpenOCD version 12.0)
 - [Avatar²-qemu](https://github.com/avatartwo/avatar-qemu) (Only for the QEmu example)
 - [PANDA](https://github.com/panda-re/panda) (Only for the PANDA example)
 
