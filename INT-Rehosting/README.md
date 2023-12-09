@@ -17,9 +17,9 @@ This example shows the following additional concepts of the avatar² framework:
 - [Avatar²-qemu](https://github.com/avatartwo/avatar-qemu) (at least December 2023)
 
 ### Contents
+- `blink_INTForwarder.py` - the avatar²-script for rehosting using the INTForwarder plugin and QEmu
 - `blink-int.bin` - Dump of the flash of the pico for quicker state transfer
 - `blink-int.elf` - Compiled firmware (with debug symbols) for flashing and debugging
 - `pico_bootrom.bin` - Dumped image of the Picos bootrom (v2.0)
 - `pico-picoprobe.cfg` - the OpenOCD configuration file for the pico-picoprobe combination
-- `rehosting_blink_example.py` - the avatar²-script for rehosting using QEmu
 - `util.py` - Utility functions for logging
